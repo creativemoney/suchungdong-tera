@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>수청동으로 올 테라! — 테라 마시고 휴가비 받자</title>
+<meta name="description" content="테라 주문하고 백화점 상품권 200만원 + 테라 굿즈 받자! 수청동 정복 스탬프 투어까지. 「수청동으로 올 테라!」 고객 참여 안내.">
+<style>
+  :root{
+    --terra:#00a14b; --terra-bright:#19c463; --terra-dark:#0a6e39; --terra-deep:#053a1f;
+    --terra-tint:#e7f6ec;
+    --gold:#ffc12e; --gold-soft:#ffda7a;
+    --red:#e8453c; --blue:#2b8fd6; --orange:#f08a1d;
+    --bg:#f3f8f0; --ink:#13231a; --muted:#54675b; --white:#fff; --line:#d8e6dc;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;color:var(--ink);background:var(--bg);line-height:1.62;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:560px;margin:0 auto;padding:0 20px}
+
+  .topbar{position:sticky;top:0;z-index:50;background:var(--terra-deep);color:#fff;display:flex;align-items:center;justify-content:space-between;padding:11px 18px}
+  .topbar b{font-size:15px;letter-spacing:-.3px}
+  .topbar .mini{font-size:11px;color:var(--terra-bright);display:block;font-weight:500}
+  .btn{display:inline-block;background:var(--gold);color:var(--terra-deep);font-weight:800;text-decoration:none;border-radius:999px;padding:9px 18px;font-size:14px;white-space:nowrap;box-shadow:0 4px 12px rgba(0,0,0,.16)}
+  .btn:active{transform:translateY(1px)}
+
+  /* HERO + 축제 데코 */
+  .hero{background:radial-gradient(135% 95% at 50% -20%, var(--terra-bright) 0%, var(--terra) 45%, var(--terra-dark) 100%);color:#fff;text-align:center;padding:8px 20px 50px;position:relative;overflow:hidden}
+  .deco{position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+  .bunting{position:absolute;top:0;left:0;width:100%;height:34px;display:block}
+  .lights{position:absolute;top:30px;left:0;width:100%;height:46px;display:block;opacity:.95}
+  .conf{position:absolute;width:11px;height:11px;border-radius:2px;opacity:.92}
+  .conf.r{border-radius:50%}
+  .spark{position:absolute;font-size:18px;color:var(--gold-soft);opacity:.85}
+  .hero-inner{position:relative;z-index:1;padding-top:78px}
+  .hero .kicker{display:inline-block;margin:0 0 8px;font-size:13px;font-weight:700;background:rgba(255,255,255,.18);padding:6px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.32)}
+  .hero h1{font-size:clamp(31px,8.8vw,47px);line-height:1.07;letter-spacing:-1.1px;font-weight:800;margin:4px 0 2px;text-shadow:0 3px 0 rgba(0,0,0,.18)}
+  .hero h1 .q{color:var(--gold-soft)}
+  .cheers{margin:10px auto 2px;display:block}
+  .hero .hook{font-size:22px;font-weight:800;line-height:1.38;margin:8px auto 0;max-width:470px;letter-spacing:-.5px}
+  .hero .hook span{color:var(--gold-soft)}
+  .prize{position:relative;margin:22px auto 0;background:rgba(255,255,255,.13);border:1.5px solid rgba(255,255,255,.4);border-radius:18px;padding:20px 16px;max-width:430px}
+  .prize .label{display:inline-block;background:var(--gold);color:var(--terra-deep);font-size:12px;font-weight:800;padding:4px 12px;border-radius:999px;letter-spacing:.3px}
+  .prize .big{font-size:31px;font-weight:800;color:#fff;letter-spacing:-.6px;line-height:1.12;margin-top:10px}
+  .prize .big b{color:var(--gold-soft)}
+  .prize .plus{font-size:14.5px;color:#fff;font-weight:700;margin-top:8px}
+  .prize .note{font-size:12.5px;color:#d6f1de;margin-top:7px}
+  .hero-cta{margin-top:24px}
+  .btn-lg{padding:15px 32px;font-size:17px}
+
+  .section{padding:32px 0}
+  .head{font-size:23px;font-weight:800;letter-spacing:-.7px;text-align:center;color:var(--terra-dark);margin-bottom:6px}
+  .head .st{color:var(--gold);font-size:17px;vertical-align:3px;margin:0 9px}
+  .sub-lead{text-align:center;color:var(--muted);font-size:14px;margin-bottom:22px}
+  .flagrule{display:block;margin:0 auto 26px;width:200px;height:18px}
+
+  .steps{display:grid;gap:12px}
+  .step{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px;box-shadow:0 4px 14px rgba(10,60,30,.06)}
+  .step .sno{flex:0 0 38px;height:38px;border-radius:50%;background:var(--terra);color:#fff;font-weight:800;font-size:17px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 0 var(--terra-dark)}
+  .step h3{font-size:16.5px;color:var(--terra-dark);margin-bottom:2px}
+  .step p{font-size:13.5px;color:var(--muted)}
+
+  .benefits{display:grid;gap:13px}
+  .ben{position:relative;background:#fff;border:1px solid var(--line);border-top:4px solid var(--terra);border-radius:14px;padding:16px;box-shadow:0 4px 14px rgba(10,60,30,.06)}
+  .ben.main{border-top-color:var(--gold);background:linear-gradient(180deg,#fffdf3,#fff)}
+  .ben .tagline{display:inline-block;font-size:11px;font-weight:800;color:var(--terra-deep);background:var(--gold-soft);padding:3px 9px;border-radius:999px;margin-bottom:8px}
+  .ben h3{font-size:17px;color:var(--terra-dark);margin-bottom:4px}
+  .ben p{font-size:13.5px;color:var(--muted)}
+  .ben h3 .ic{margin-right:6px}
+
+  .tour{position:relative;background:var(--terra-deep);color:#fff;border-radius:20px;padding:30px 22px;overflow:hidden}
+  .tour .tlight{position:absolute;top:0;left:0;width:100%;height:30px;opacity:.9}
+  .tour .tag{display:inline-block;background:var(--terra-bright);color:var(--terra-deep);font-weight:800;font-size:12px;padding:5px 13px;border-radius:999px}
+  .tour h2{font-size:22px;font-weight:800;letter-spacing:-.5px;margin:14px 0 8px;line-height:1.22;color:#fff}
+  .tour h2 em{color:var(--terra-bright);font-style:normal}
+  .tour p.t-desc{color:#cfe9d7;font-size:14.5px}
+  .tour .reward{margin-top:18px;background:rgba(255,193,46,.15);border:1px dashed var(--gold);border-radius:12px;padding:14px 16px;font-size:14px;color:#ffe9b6}
+  .tour .reward b{color:var(--gold-soft)}
+
+  .placeholder-note{background:var(--terra-tint);border:1px solid var(--terra);border-radius:12px;padding:11px 14px;font-size:12.5px;color:var(--terra-dark);margin-bottom:16px;text-align:center}
+  .stores{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}
+  @media(min-width:480px){.stores{grid-template-columns:repeat(3,1fr)}}
+  .store{background:#fff;border:1px solid var(--line);border-radius:13px;padding:13px 11px;text-align:center;display:flex;flex-direction:column;align-items:center;box-shadow:0 3px 10px rgba(10,60,30,.05)}
+  .store .no{width:26px;height:26px;border-radius:50%;background:var(--terra);color:#fff;font-weight:800;font-size:12.5px;display:flex;align-items:center;justify-content:center;margin-bottom:7px}
+  .store .snm{font-weight:700;font-size:13.5px;color:var(--terra-dark);line-height:1.3}
+  .store .scat{font-size:11px;color:var(--muted);margin:2px 0 10px}
+  .store a.place{margin-top:auto;display:inline-flex;align-items:center;gap:5px;background:#03c75a;color:#fff;text-decoration:none;font-weight:700;font-size:11.5px;padding:7px 10px;border-radius:8px;width:100%;justify-content:center}
+  .store a.place .nv{font-weight:900;background:#fff;color:#03c75a;border-radius:3px;width:14px;height:14px;display:inline-flex;align-items:center;justify-content:center;font-size:10.5px}
+
+  .cond{font-size:12.5px;color:var(--muted);text-align:center;margin-top:18px;line-height:1.7}
+
+  .owner{background:var(--terra-tint);border:1px dashed var(--terra);border-radius:16px;padding:22px 18px;text-align:center;margin-top:8px}
+  .owner h3{font-size:16px;color:var(--terra-dark);margin-bottom:6px}
+  .owner p{font-size:13px;color:var(--muted);margin-bottom:14px}
+  .owner .ph{display:inline-block;margin:4px 6px;font-weight:800;color:var(--terra-dark);text-decoration:none;font-size:14px}
+  .owner .ph small{display:block;font-size:11px;color:var(--muted);font-weight:600}
+
+  footer{position:relative;background:var(--terra-deep);color:#a8cdb5;text-align:center;padding:30px 20px 24px;font-size:12px;margin-top:30px;overflow:hidden}
+  footer .flight{position:absolute;top:0;left:0;width:100%;height:28px;opacity:.85}
+  footer b{color:#fff}
+  .terra-mark{font-size:20px;font-weight:800;color:#fff;letter-spacing:2px}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <b>수청동으로 올 테라!<span class="mini">고객 참여 이벤트</span></b>
+  <a class="btn" href="#how">참여 방법</a>
+</div>
+
+<header class="hero">
+  <div class="deco">
+    <svg class="bunting" viewBox="0 0 560 34" preserveAspectRatio="none">
+      <path d="M0 4 H560" stroke="rgba(255,255,255,.5)" stroke-width="2" fill="none"/>
+      <g>
+        <polygon points="6,4 46,4 26,30" fill="#e8453c"/>
+        <polygon points="46,4 86,4 66,30" fill="#ffc12e"/>
+        <polygon points="86,4 126,4 106,30" fill="#2b8fd6"/>
+        <polygon points="126,4 166,4 146,30" fill="#f08a1d"/>
+        <polygon points="166,4 206,4 186,30" fill="#19c463"/>
+        <polygon points="206,4 246,4 226,30" fill="#e8453c"/>
+        <polygon points="246,4 286,4 266,30" fill="#ffc12e"/>
+        <polygon points="286,4 326,4 306,30" fill="#2b8fd6"/>
+        <polygon points="326,4 366,4 346,30" fill="#f08a1d"/>
+        <polygon points="366,4 406,4 386,30" fill="#19c463"/>
+        <polygon points="406,4 446,4 426,30" fill="#e8453c"/>
+        <polygon points="446,4 486,4 466,30" fill="#ffc12e"/>
+        <polygon points="486,4 526,4 506,30" fill="#2b8fd6"/>
+        <polygon points="526,4 560,4 546,30" fill="#f08a1d"/>
+      </g>
+    </svg>
+    <svg class="lights" viewBox="0 0 560 46" preserveAspectRatio="none">
+      <path d="M0 6 Q140 40 280 14 Q420 40 560 8" stroke="rgba(255,255,255,.45)" stroke-width="1.5" fill="none"/>
+      <g>
+        <circle cx="60" cy="24" r="5" fill="#ffe27a"/><circle cx="120" cy="30" r="5" fill="#fff3b0"/>
+        <circle cx="190" cy="26" r="5" fill="#ffe27a"/><circle cx="280" cy="15" r="5" fill="#fff3b0"/>
+        <circle cx="370" cy="26" r="5" fill="#ffe27a"/><circle cx="440" cy="30" r="5" fill="#fff3b0"/>
+        <circle cx="500" cy="22" r="5" fill="#ffe27a"/>
+      </g>
+    </svg>
+    <span class="conf" style="top:96px;left:30px;background:#ffc12e;transform:rotate(20deg)"></span>
+    <span class="conf r" style="top:140px;left:14px;background:#e8453c"></span>
+    <span class="conf" style="top:200px;left:40px;background:#2b8fd6;transform:rotate(-15deg)"></span>
+    <span class="conf r" style="top:120px;right:24px;background:#ffda7a"></span>
+    <span class="conf" style="top:178px;right:34px;background:#f08a1d;transform:rotate(25deg)"></span>
+    <span class="conf r" style="top:240px;right:18px;background:#fff"></span>
+    <span class="conf" style="top:300px;left:22px;background:#19c463;transform:rotate(-20deg)"></span>
+    <span class="conf r" style="top:330px;right:30px;background:#ffc12e"></span>
+    <span class="spark" style="top:108px;right:60px">✦</span>
+    <span class="spark" style="top:150px;left:60px;font-size:13px">✦</span>
+  </div>
+
+  <div class="hero-inner">
+    <span class="kicker">오늘 이 테이블에서 바로 응모</span>
+    <h1><span class="q">「</span>수청동으로 올 테라!<span class="q">」</span></h1>
+
+    <svg class="cheers" width="132" height="78" viewBox="0 0 132 78" aria-label="건배">
+      <g stroke="#053a1f" stroke-width="3" stroke-linejoin="round" stroke-linecap="round">
+        <g transform="rotate(-12 40 50)">
+          <rect x="22" y="30" width="34" height="40" rx="5" fill="#ffd24d"/>
+          <rect x="22" y="30" width="34" height="11" rx="4" fill="#fff"/>
+          <path d="M56 40 q14 2 14 14 t-14 12" fill="none"/>
+          <rect x="22" y="24" width="34" height="9" rx="4" fill="#fff"/>
+        </g>
+        <g transform="rotate(12 92 50)">
+          <rect x="76" y="30" width="34" height="40" rx="5" fill="#ffd24d"/>
+          <rect x="76" y="30" width="34" height="11" rx="4" fill="#fff"/>
+          <path d="M76 40 q-14 2 -14 14 t14 12" fill="none"/>
+          <rect x="76" y="24" width="34" height="9" rx="4" fill="#fff"/>
+        </g>
+      </g>
+      <g stroke="#fff3b0" stroke-width="2.5" stroke-linecap="round">
+        <path d="M66 16 v-9"/><path d="M55 20 l-6 -7"/><path d="M77 20 l6 -7"/>
+      </g>
+    </svg>
+
+    <p class="hook">맥주 한 잔 했을 뿐인데, <span>휴가비가 생겼다.</span></p>
+    <div class="prize">
+      <span class="label">🧳 휴가비를 쏠 테라!</span>
+      <div class="big">백화점 상품권 <b>200만원</b></div>
+      <div class="plus">＋ 테라 굿즈 추첨</div>
+      <div class="note">테라 주문하고 응모권만 쓰면 끝 · 2026년 7월 한 달</div>
+    </div>
+    <div class="hero-cta">
+      <a class="btn btn-lg" href="#how">어떻게 받나요?</a>
+    </div>
+  </div>
+</header>
+
+<section class="section" id="how">
+  <div class="wrap">
+    <div class="head"><span class="st">★</span>참여는 딱 3단계<span class="st">★</span></div>
+    <p class="sub-lead">지금 앉은 자리에서 바로 됩니다.</p>
+    <div class="steps">
+      <div class="step">
+        <div class="sno">1</div>
+        <div><h3>시원하게 테라 한 잔</h3><p>테라·켈리·테라라이트, 테라 맥주를 주문하세요.</p></div>
+      </div>
+      <div class="step">
+        <div class="sno">2</div>
+        <div><h3>응모권 쓰고 끝</h3><p>「휴가비를 쏠 테라!」 응모권만 작성하면 백화점 상품권 200만원 + 굿즈 추첨에 자동 응모.</p></div>
+      </div>
+      <div class="step">
+        <div class="sno">3</div>
+        <div><h3>욕심나면, 한 바퀴 더</h3><p>테라 3병이면 굿즈가 바로. 옆 가게 스탬프까지 찍으면 받을 기회가 더 커집니다.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:4px">
+  <div class="wrap">
+    <div class="head"><span class="st">★</span>테라 마시면 생기는 일<span class="st">★</span></div>
+    <p class="sub-lead">7월 한 달, 수청동에서만</p>
+    <div class="benefits">
+      <div class="ben main">
+        <span class="tagline">메인 경품</span>
+        <h3><span class="ic">🧳</span>휴가비를 쏠 테라!</h3>
+        <p>테라 주문 고객 추첨 이벤트. 백화점 상품권 <b>총 200만원 상당</b>과 테라 굿즈를 쏩니다. 이번 여름 휴가비, 여기서 나올지도 모릅니다.</p>
+      </div>
+      <div class="ben">
+        <h3><span class="ic">🎁</span>테라 3병이면 굿즈 즉시 증정</h3>
+        <p>테라 3병 주문하면 그 자리에서 테라 굿즈를 바로 드립니다. 추첨 아니고, 무조건.</p>
+      </div>
+      <div class="ben">
+        <h3><span class="ic">📍</span>수청동 정복 스탬프 투어</h3>
+        <p>참여 상점을 돌며 스탬프 적립. 많이 돌수록 받을 기회가 커지는 동네 한 바퀴 게임.</p>
+      </div>
+      <div class="ben">
+        <h3><span class="ic">⛺</span>아웃도어 행사 2회</h3>
+        <p>7월 동안 수청동 곳곳에서 즐길 거리 가득한 아웃도어 행사가 두 번 열립니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:4px" id="tour">
+  <div class="wrap">
+    <div class="tour">
+      <svg class="tlight" viewBox="0 0 520 30" preserveAspectRatio="none">
+        <path d="M0 5 Q130 26 260 10 Q390 26 520 6" stroke="rgba(255,255,255,.3)" stroke-width="1.4" fill="none"/>
+        <circle cx="70" cy="16" r="4" fill="#ffe27a"/><circle cx="150" cy="20" r="4" fill="#19c463"/>
+        <circle cx="260" cy="11" r="4" fill="#ffe27a"/><circle cx="370" cy="20" r="4" fill="#19c463"/>
+        <circle cx="450" cy="16" r="4" fill="#ffe27a"/>
+      </svg>
+      <span class="tag">수청동 정복 야호!</span>
+      <h2>클럽데이는 클럽을 돌지만,<br><em>수청동은 가게를 돕니다</em></h2>
+      <p class="t-desc">한 집에서 끝내기엔 좀 아쉽잖아요. 스탬프 패스 한 장이면 참여 상점 어디든 건너다니며 테라 한 잔씩. 오늘 밤 핫플은 멀리 있지 않습니다 — 도장이 늘수록 받을 수 있는 것도 같이 커지니까요.</p>
+      <div class="reward"><b>★ 많이 돌수록 커지는 혜택</b> · 테라 3병 굿즈 ＋ 백화점 상품권 총 <b>200만원 상당</b> 추첨까지, 여러 가게를 돌수록 응모 기회가 늘어납니다.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:4px" id="stores">
+  <div class="wrap">
+    <div class="head"><span class="st">★</span>어디서 즐기나요?<span class="st">★</span></div>
+    <p class="sub-lead">스탬프 투어 참여 상점 · 상점명을 누르면 네이버 플레이스로 이동</p>
+    <div class="placeholder-note">⚙ 아래는 자리표시(플레이스홀더) 20칸입니다. 상점명·네이버 플레이스 링크는 확정되는 대로 채워 넣습니다.</div>
+    <div class="stores">
+      <div class="store"><div class="no">1</div><div class="snm">참여 상점 01</div><div class="scat">업종 미정</div><a class="place" href="#" target="_blank" rel="noopener"><span class="nv">N</span> 플레이스</a></div>
+      <div class="store"><div class="no">2</div><div class="snm">참여 상점 02</div><div class="scat">업종 미정</div><a class="place" href="#" target="_blank" rel="noopener"><span class="nv">N</span> 플레이스</a></div>
+      <div class="store"><div class="no">3</div><div class="snm">참여 상점 03</div><div class="scat">업종 미정</div><a class="place" href="#" target="_blank" rel="noopener"><span class="nv">N</span> 플레이스</a></div>
+      <div class="store"><div class="no">4</d

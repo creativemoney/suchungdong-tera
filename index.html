@@ -137,6 +137,9 @@
   .step{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px;box-shadow:0 6px 18px rgba(10,60,30,.07);transition:transform .25s,box-shadow .25s}
   .step:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(10,60,30,.12)}
   .step .sno{flex:0 0 40px;height:40px;border-radius:50%;background:linear-gradient(180deg,var(--terra-bright),var(--terra));color:#fff;font-weight:800;font-size:18px;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 0 var(--terra-dark)}
+  .step .sicon{flex:0 0 58px;height:58px;border-radius:15px;background:var(--terra-tint);display:flex;align-items:center;justify-content:center;position:relative}
+  .step .sicon svg{width:40px;height:40px;display:block}
+  .step .sicon .snum{position:absolute;top:-7px;left:-7px;width:23px;height:23px;border-radius:50%;background:linear-gradient(180deg,var(--terra-bright),var(--terra));color:#fff;font-weight:800;font-size:12px;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 0 var(--terra-dark)}
   .step h3{font-size:16.5px;color:var(--terra-dark);margin-bottom:2px}
   .step p{font-size:13.5px;color:var(--muted)}
 
@@ -169,6 +172,12 @@
   .imgph .cam{font-size:22px}
   .imgph .pl{font-size:10.5px;font-weight:800;line-height:1.3;margin-top:4px}
   .imgph .pl small{display:block;font-weight:500;color:var(--muted);font-size:9.5px;margin-top:1px}
+  .benph{margin-top:13px;border-radius:12px;overflow:hidden;border:1px solid var(--line);aspect-ratio:3/2}
+  .benph img{width:100%;height:100%;object-fit:cover;display:block}
+  .benph .imgph{width:100%;height:100%;border-radius:0;border:1px dashed var(--terra)}
+  .benph .imgph .cam{font-size:26px}
+  .benph .imgph .pl{font-size:12.5px}
+  .benph .imgph .pl small{font-size:10.5px}
 
   .tour{position:relative;background:linear-gradient(160deg,var(--terra-dark),var(--terra-deep));color:#fff;border-radius:22px;padding:32px 22px;overflow:hidden;box-shadow:0 14px 40px rgba(5,58,31,.3)}
   .tour .tlight{position:absolute;top:0;left:0;width:100%;height:30px;opacity:.9}
@@ -314,15 +323,41 @@
     <p class="sub-lead reveal">지금 앉은 자리에서 바로 됩니다.</p>
     <div class="steps">
       <div class="step reveal">
-        <div class="sno">1</div>
+        <div class="sicon">
+          <svg viewBox="0 0 46 46" aria-hidden="true">
+            <path d="M33 16 q9 1 9 9 t-9 9" fill="none" stroke="#053a1f" stroke-width="3" stroke-linecap="round"/>
+            <rect x="9" y="14" width="24" height="28" rx="4" fill="#ffd24d" stroke="#053a1f" stroke-width="2.6"/>
+            <rect x="13" y="18" width="5" height="22" rx="2.5" fill="#ffe487"/>
+            <path d="M6 15 q2 -7 9 -5 q3 -6 10 -4 q8 -1 9 6 q4 1 2 7 q-18 3 -30 0 q-2 -6 0 -4Z" fill="#fff" stroke="#053a1f" stroke-width="2.6" stroke-linejoin="round"/>
+          </svg>
+          <span class="snum">1</span>
+        </div>
         <div><h3>시원하게 테라 한 잔</h3><p>테라·켈리·테라라이트, 테라 맥주를 주문하세요.</p></div>
       </div>
       <div class="step reveal">
-        <div class="sno">2</div>
+        <div class="sicon">
+          <svg viewBox="0 0 46 46" aria-hidden="true">
+            <path d="M7 15 h32 a3 3 0 0 1 3 3 v3.5 a3.5 3.5 0 0 0 0 7 v3.5 a3 3 0 0 1 -3 3 h-32 a3 3 0 0 1 -3 -3 v-3.5 a3.5 3.5 0 0 0 0 -7 v-3.5 a3 3 0 0 1 3 -3Z" fill="#ffc12e" stroke="#053a1f" stroke-width="2.4" stroke-linejoin="round"/>
+            <line x1="28" y1="17" x2="28" y2="39" stroke="#053a1f" stroke-width="2" stroke-dasharray="3 3"/>
+            <text x="16" y="30" text-anchor="middle" font-size="14" font-weight="800" fill="#053a1f">★</text>
+          </svg>
+          <span class="snum">2</span>
+        </div>
         <div><h3>1병당 응모권 1장</h3><p>테라 1병 주문마다 응모권을 1장씩. 총 170만원 현금 휴가비 추첨에 자동 응모돼요.</p></div>
       </div>
       <div class="step reveal">
-        <div class="sno">3</div>
+        <div class="sicon">
+          <svg viewBox="0 0 46 46" aria-hidden="true">
+            <g stroke="#053a1f" stroke-width="2.4" stroke-linejoin="round">
+              <rect x="10" y="21" width="26" height="19" rx="2" fill="#e8453c"/>
+              <rect x="7" y="15" width="32" height="8" rx="2" fill="#ff6a5f"/>
+              <path d="M23 15 v25" stroke="#fff" stroke-width="3"/>
+              <path d="M23 15 q-9 -11 -13 -3 q-1 6 13 3Z" fill="#ffd24d"/>
+              <path d="M23 15 q9 -11 13 -3 q1 6 -13 3Z" fill="#ffd24d"/>
+            </g>
+          </svg>
+          <span class="snum">3</span>
+        </div>
         <div><h3>욕심나면, 한 바퀴 더</h3><p>테라 2병이면 컬러잔 무조건 증정. 17곳 중 10곳 스탬프를 모으면 선착순 20명 쏘맥타워+굿즈세트까지.</p></div>
       </div>
     </div>
@@ -361,14 +396,22 @@
         <div class="pthumbs c3">
           <div class="pthumb">
             <div class="m cash">
-              <svg width="70%" height="70%" viewBox="0 0 140 120" preserveAspectRatio="xMidYMid meet" aria-label="현금">
-                <g stroke="#0a6e39" stroke-width="2.5">
-                  <rect x="26" y="52" width="96" height="50" rx="8" fill="#0a6e39" transform="rotate(-9 74 77)"/>
-                  <rect x="24" y="44" width="96" height="50" rx="8" fill="#19c463" transform="rotate(-3 72 69)"/>
-                  <rect x="22" y="36" width="96" height="50" rx="8" fill="#00a14b"/>
+              <svg width="86%" height="86%" viewBox="0 0 150 122" preserveAspectRatio="xMidYMid meet" aria-label="오만원권 현금 다발">
+                <g stroke="#c39f3f" stroke-width="1.4">
+                  <rect x="30" y="14" width="92" height="40" rx="5" fill="#f6e7a4" transform="rotate(-13 76 34)"/>
+                  <rect x="24" y="20" width="98" height="42" rx="5" fill="#efd98d" transform="rotate(-5 73 41)"/>
                 </g>
-                <circle cx="70" cy="61" r="16" fill="#fffdf3" stroke="#0a6e39" stroke-width="2.5"/>
-                <text x="70" y="68" text-anchor="middle" font-size="19" font-weight="800" fill="#0a6e39">₩</text>
+                <g stroke="#c39f3f" stroke-width="1.4">
+                  <rect x="16" y="72" width="108" height="42" rx="6" fill="#e5cd79"/>
+                  <rect x="16" y="67" width="108" height="42" rx="6" fill="#f0dc92"/>
+                  <rect x="16" y="62" width="108" height="42" rx="6" fill="#f8ecb4"/>
+                </g>
+                <circle cx="40" cy="83" r="11" fill="#e6cd72" stroke="#c39f3f" stroke-width="1.2"/>
+                <path d="M35 86 q5 -7 10 0" fill="none" stroke="#b99a3c" stroke-width="1.4"/>
+                <text x="97" y="80" text-anchor="middle" font-size="17" font-weight="800" fill="#7a5f14">50,000</text>
+                <text x="97" y="96" text-anchor="middle" font-size="9.5" font-weight="700" fill="#96772a">오만원</text>
+                <rect x="59" y="58" width="23" height="56" fill="#e8453c" stroke="#b7322b" stroke-width="1"/>
+                <text x="70.5" y="90" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">₩</text>
               </svg>
             </div>
             <div class="cap">현금 100·20·5만원</div>
@@ -387,12 +430,7 @@
         <span class="tagline">무조건 증정</span>
         <h3><span class="ic">🍺</span>무조건 선물 드릴 테라!</h3>
         <p>테라(켈리·테라라이트 교차 가능) <b>2병 음용 시 테라 컬러잔 1개</b>를 그 자리에서 드립니다. 추첨 아니고, 무조건.</p>
-        <div class="pthumbs c2">
-          <div class="pthumb">
-            <div class="m"><div class="imgph"><span class="cam">📷</span><span class="pl">테라 컬러잔<small>사진 예정</small></span></div></div>
-            <div class="cap">2병 음용 시 무조건</div>
-          </div>
-        </div>
+        <div class="benph"><div class="imgph"><span class="cam">📷</span><span class="pl">테라 컬러잔<small>사진 예정 · 2병 음용 시 무조건 증정</small></span></div></div>
       </div>
       <div class="ben reveal">
         <span class="tagline">스탬프 투어</span>
